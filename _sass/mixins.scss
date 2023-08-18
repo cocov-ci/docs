@@ -1,0 +1,7 @@
+@mixin medium {
+    font-variation-settings: "wght" 500;
+}
+
+@mixin bold {
+    font-variation-settings: "wght" 600;
+}

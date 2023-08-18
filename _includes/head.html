@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% if page.title %}
+<title>{{ page.title }} - {{ site.title }}</title>
+{% else %}
+<title>{{ site.title }}</title>
+{% endif %}
+
+{%  for hash in site["html-meta"] -%}
+<meta name="{{hash[0]}}" content="{{hash[1]}}" />
+{%- endfor %}
+{% if page.title %}
+<meta name="twitter:title" content="{{ page.title }} - {{ site.title }}">
+{% else %}
+<meta name="twitter:title" content="{{ site.title }}">
+{% endif %}
+<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}?cache={{ site.time | date: "%Y%m%dT%H%M%S" }}">

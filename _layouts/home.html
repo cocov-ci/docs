@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+  {% include head.html %}
+  </head>
+  <body class="home">
+      <div class="callout">
+        {% include header.html %}
+        <main class="content">
+          <section class="hero">
+            <h1>A comprehensive open-source code review and quality platform</h1>
+          </section>
+          <div class="screenshot">
+            <div class="container"></div>
+          </div>
+        </main>
+      </div>
+      <main class="content">
+        <div class="main-content">
+          <div class="open">
+            <h1>Open-Source, Self-Hosted, Customizable</h1>
+            <p>Cocov was built to be flexible and empower developers to work without constraints and other hindrances. All configuration is kept in your project’s repository, meaning changes must go through your team’s approval process — be it a Codeowners check, or reviews in Pull Requests, — which equals less time figuring out a tool’s quirks or waiting users with administrative permissions to perform an action, and more time trying to solve the problem at hands.</p>
+            <br/>
+            <p>Being flexible isn’t Cocov’s only strenght:</p>
+          </div>
+
+          <div class="features">
+            <div class="row-2">
+              <div class="column">
+                <div class="image cost-effective"><div class="container"></div></div>
+                <h3>Cost-effective</h3>
+                <p>Cocov is a solution for small to medium-sized organizations that provides an open-source, self-hosted alternative to expensive code analysis tools. The platform becomes part of your infrastructure and is completely under your control in terms of resources, allowing expenses to be previsible as your company scales.</p>
+              </div>
+              <div class="column">
+                <div class="image install-box"><div class="container"></div></div>
+                <h3>Easy to Install</h3>
+                <p>Kubernetes clusters can easily get a Cocov instance by using a Helm chart, but if your team is not into that, a Compose-compatible tool can also bring up all containers and tools with a Composefile, both options saving time and effort on installation and configuration.</p>
+              </div>
+            </div>
+            <div class="row-2">
+              <div class="column">
+                <div class="image customizable"><div class="container"></div></div>
+                <h3>Customizable</h3>
+                <p>Cocov is a solution for small to medium-sized organizations that provides an open-source, self-hosted alternative to expensive code analysis tools. The platform becomes part of your infrastructure and is completely under your control in terms of resources, allowing expenses to be previsible as your company scales.</p>
+              </div>
+              <div class="column">
+                <div class="image automated-checks"><div class="container"></div></div>
+                <h3>Automated Code Checks</h3>
+                <p>Cocov automatically checks code for errors and issues upon commit or pull request, reducing the likelihood of errors and bugs and providing near real-time feedback to developers.</p>
+              </div>
+            </div>
+            <div class="row-1">
+              <div class="column">
+                <div class="image feedback"><div class="container"></div></div>
+                <h3>Comprehensive Feedback</h3>
+                <p>Cocov provides comprehensive feedback on code coverage, check results, and other metrics through a user-friendly web interface, helping developers understand the quality of their code and make improvements as needed. The results of those checks are also sent to GitHub, enabling teams to configure branch protection rules that respond to Cocov’s results.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="ready">
+            <h1>Ready to Begin?</h1>
+            <p>Installation is easy, and once you have all requirements ready, it should be super fast to get Cocov working on your infrastructure. See our documentation for detailed instructions.</p>
+            <a class="start" href="/docs">Get Started</a>
+          </div>
+        </div>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>

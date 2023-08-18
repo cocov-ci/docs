@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+  {% include head.html %}
+  <script src="{{ "/assets/js/turbo.js" | relative_url }}?cache={{ site.time | date: "%Y%m%dT%H%M%S" }}"></script>
+  </head>
+  <body class="documentation">
+      {% include header.html %}
+      <main class="page">
+          <div id="tree-nav" class="tree" data-turbo-permanent>
+            <div class="wrapper">
+            {% include documentation-tree.html nav=site.data.docs_index.nav raw_components="" %}
+            </div>
+          </div>
+          <div class="tree-close-area"></div>
+
+          <script>
+            document.addEventListener("turbo:load", () => {
+              document
+                .querySelectorAll("[data-doc-id].active")
+                .forEach(i => i.classList.remove("active"));
+
+              const pid = document.querySelector("[data-page-id]").attributes['data-page-id'].value;
+              const el = document.querySelector(`[data-doc-id="${pid}"]`);
+              if (!el) { return; }
+              el.classList.add("active")
+              let parent = el.parentElement;
+              do {
+                if (el.nodeName === 'DETAILS') {
+                  el.setAttribute('open', true);
+                }
+
+                if (parent.nodeName === 'DETAILS') {
+                  parent.setAttribute('open', true);
+                }
+
+                parent = parent.parentElement;
+              } while (!!parent && parent.className != "tree");
+
+              el.scrollIntoViewIfNeeded();
+            });
+          </script>
+
+          <div class="documentation-wrapper">
+            <div class="documentation-content">
+                <h1>{{ page.title }}</h1>
+                <div class="meta" data-page-id="{{ page.url | replace: ".html", "" | hashify }}">
+                    Last updated {% last_modified_at %}
+                </div>
+                {% assign toc_content = content | toc %}
+                {% include anchor_headings.html html=toc_content anchorClass="heading-anchor" anchorBody="#" %}
+            </div>
+          </div>
+      </main>
+      {% include footer.html large=true %}
+  </body>
+</html>

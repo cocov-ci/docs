@@ -1,0 +1,161 @@
+body.home {
+    .callout {
+        background-image: linear-gradient(180deg, #F4F4F6 0%, #E6E7E8 100%);
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow: hidden;
+
+        .hero {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+
+            h1 {
+                margin: 48px 0 42px;
+                @include bold;
+                font-size: 24px;
+                color: #000000;
+                text-align: center;
+                width: 650px;
+            }
+        }
+
+        .screenshot {
+            display: flex;
+            justify-content: space-around;
+            .container {
+                border-radius: 4px 4px 0 0;
+                width: 100%;
+                max-width: 858px;
+                height: 300px;
+                box-shadow: 0 0 17px 7px rgba(0,0,0,0.09);
+                overflow: hidden;
+                background-image: url(/assets/images/screenshot.png);
+                background-size: 100%;
+            }
+        }
+    }
+
+    .main-content {
+        background: #F4F4F6;
+        box-shadow: 0 0 17px 7px rgba(0,0,0,0.19);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    main.content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .open {
+        margin-top: 30px;
+        h1 {
+            @include bold;
+            font-size: 27px;
+            color: #000000;
+            margin-bottom: 16px;
+        }
+    }
+
+    .features {
+        flex-direction: column;
+        margin-top: 27px;
+
+        .row-2 {
+            width: 100%;
+            justify-content: space-between;
+
+            &:not(:first-child) {
+                margin-top: 44px;
+            }
+        }
+
+        .row-1 {
+            &:not(:first-child) {
+                margin-top: 44px;
+            }
+        }
+
+        .column {
+            width: 310px;
+            margin-bottom: 40px;
+            .image {
+                width: 100%;
+                border-bottom: 1px solid #CACACA;
+                .container {
+                    background-size: 100% 100%;
+                }
+
+                &.cost-effective .container {
+                    margin-top: 13px;
+                    height: 101.5px;
+                    width: 150.5px;
+                    background-image: url(/assets/images/cost-effective.png);
+                }
+
+                &.install-box .container {
+                    height: 115px;
+                    width: 148px;
+                    background-image: url(/assets/images/install-box.png);
+                }
+
+                &.customizable .container {
+                    margin-left: 25px;
+                    height: 199px;
+                    width: 125px;
+                    background-image: url(/assets/images/customizable.png);
+                }
+
+                &.automated-checks .container {
+                    height: 213px;
+                    width: 158px;
+                    background-image: url(/assets/images/automated-checks.png);
+                }
+
+                &.feedback .container {
+                    height: 182px;
+                    width: 120.5px;
+                    background-image: url(/assets/images/feedback.png);
+                    margin-bottom: 5px;
+                    margin-left: 10px;
+                }
+            }
+
+            h3 {
+                @include bold;
+                font-size: 22px;
+                margin-bottom: 0;
+                margin-top: 22px;
+            }
+        }
+    }
+
+    .ready {
+        margin-top: 80px;
+        padding-top: 35px;
+        border-top: 1px solid #cacaca;
+
+        h1 {
+            margin-bottom: 15px;
+            margin-top: 0;
+            font-size: 26px;
+        }
+
+        .start {
+            display: inline-block;
+            margin: 35px 0;
+            background: #333333;
+            border-radius: 23px;
+            @include bold;
+            font-size: 14px;
+            color: #FFFFFF;
+            letter-spacing: 0.3px;
+            text-align: left;
+            padding: 10px 16px;
+            text-decoration: none;
+        }
+    }
+}

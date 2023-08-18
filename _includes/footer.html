@@ -1,0 +1,33 @@
+<footer class="{% if include.large %}large{% endif %}">
+    <div class="wrapper">
+        <div class="links">
+            <div class="logo">
+                <div class="container"></div>
+            </div>
+            <div class="lists">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="https://github.com/cocov-ci">Source Code</a></li>
+                    <li><a href="/docs">Documentation</a></li>
+                    <li><a href="https://github.com/orgs/cocov-ci/discussions">Community</a></li>
+                    <li><a href="/licenses">Licenses</a></li>
+                </ul>
+                <ul>
+                    <li><a href="/plugins">Plugins</a></li>
+                    <li><a href="https://github.com/cocov-ci/.github/blob/main/SECURITY.md">Security</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copy">
+            <div class="sosumi">
+                <p>Copyright &copy; 2022-{{ site.time | date: '%Y' }} - The Cocov Authors</p>
+                {% if page.extra_footer %}
+                <p>{{ page.extra_footer }}</p>
+                {% endif %}
+            </div>
+            <div class="edit">
+                This site is open source! {% github_edit_link "Improve this page" %}?
+            </div>
+        </div>
+    </div>
+</footer>

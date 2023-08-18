@@ -1,0 +1,28 @@
+{% for obj in include.nav %}
+{% assign components = include.raw_components | split: "/" %}
+{% if obj['title'] %}
+    {% assign t = obj.title | slugify %}
+    {% assign new_comps_d = components | push: t | join: "/" %}
+    {% assign url = "/docs/" | append: new_comps_d | append: "/" %}
+    <details data-doc-id="{{ url | hashify }}">
+        <!-- "{{ url }}" -->
+        <!-- "{{ page.url }}" -->
+
+        <summary>
+            <a href="{{ url }}"><span class="label">{{ obj.title }}</span></a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </summary>
+        <div class="details-contents">
+            <div class="details-contents-wrapper">
+                {% include documentation-tree.html nav=obj.items raw_components=new_comps_d %}
+            </div>
+            <div class="details-contents-rail"></div>
+        </div>
+    </details>
+{% else %}
+{% assign t = obj | slugify %}
+{% assign new_comps_o = components | push: t | join: "/" %}
+{% assign url = "/docs/" | append: new_comps_o %}
+<a href="{{ url }}" data-doc-id="{{ url | hashify }}"><span class="label">{{ obj }}</span></a>
+{% endif %}
+{% endfor %}

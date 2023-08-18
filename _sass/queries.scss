@@ -1,0 +1,145 @@
+@media (min-width: 768px) {
+    .main-header {
+        .icon {
+            margin-left: 40px;
+        }
+
+        .links {
+            margin-right: 40px;
+        }
+    }
+
+    footer {
+        display: flex;
+        .wrapper {
+            display: flex;
+        }
+
+        .links {
+            display: flex;
+        }
+
+        .copy {
+            display: flex;
+
+            .edit {
+                margin-left: 40px;
+            }
+        }
+    }
+
+    body.home {
+        .callout {
+            main.content .hero h1 {
+                font-size: 42px;
+            }
+
+            .screenshot .container {
+                height: 658px;
+            }
+        }
+
+        .main-content {
+            display: flex;
+            padding: 0;
+
+            > div {
+                width: 858px;
+            }
+        }
+
+        .open {
+            margin-top: 40px;
+            h1 {
+                font-size: 42px;
+            }
+        }
+
+        .features {
+            display: flex;
+
+            .row-2 {
+                display: flex;
+            }
+
+            .column {
+                margin-bottom: initial;
+            }
+        }
+
+        .ready {
+            h1 {
+                font-size: 42px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1001px) {
+    body.documentation {
+        main.page {
+            display: flex;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    body.documentation {
+
+        #toc {
+            display: none;
+        }
+        .main-header {
+            position: fixed;
+            width: 100%;
+            background: white;
+            z-index: 200;
+
+            .menu-toggle-wrapper {
+                display: flex;
+            }
+
+            .contents .icon {
+                margin-left: 0;
+            }
+        }
+
+        main.page {
+            padding-top: 60px;
+
+            .tree {
+                padding-top: 10px;
+                transition: transform ease-in 150ms;
+                display: block;
+                left: -300px;
+                position: fixed;
+                z-index: 100;
+                background: white;
+                height: 100%;
+            }
+
+            .documentation-content {
+                img.screenshot {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    body.documentation {
+        main.page {
+            .documentation-content {
+                padding: 18px 20px;
+            }
+
+            table {
+                table-layout: fixed;
+                word-wrap: break-word;
+                hyphens: auto;
+            }
+        }
+    }
+}

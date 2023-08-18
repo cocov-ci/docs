@@ -1,0 +1,57 @@
+nav:
+  - "Introduction"
+  - title: "Installation, Administration & Maintenance"
+    items:
+    - title: "Infrastructure"
+      items:
+      - title: "Platform Components"
+        items:
+          - title: "API"
+            items:
+            - "Configuration Options"
+          - "Sidekiq"
+          - "Web UI"
+          - title: "Worker"
+            items:
+            - "Configuration Options"
+          - title: "Cache"
+            items:
+            - "Configuration Options"
+          - "Badger"
+      - title: "Installation"
+        items:
+        - "Requirements"
+        - "Creating a GitHub App"
+        - title: "Installing on Kubernetes using Helm"
+          items:
+          - "Choosing a Storage Medium"
+          - "Initializing the API and Web UI"
+          - "Initializing the Worker instance"
+          - "Enabling the Badger"
+          - "Enabling Worker Cache"
+        - "Starting an Instance Using Docker Compose"
+    - title: "Administration"
+      items:
+      - "Users"
+      - "Permissions"
+      - "Service Tokens"
+      - "Repositories"
+      - "Personal Access Tokens"
+      - "Badges"
+      - "Organization & Repository Settings"
+      - "Sidekiq Dashboard"
+      - "Caches"
+  - title: "Configuring a Repository to Use Cocov"
+    items:
+    - "Checks & Limits: The Manifest File"
+    - "Uploading Test Coverage to Cocov"
+    - "Protecting the Manifest File"
+    - "Blocking PRs using Cocov Results"
+    - "Supported Coverage Formats"
+  - title: "Plugin Development"
+    items:
+    - "What is a Cocov Plugin"
+    - "Cocov SDKs"
+    - "Testing Plugins Locally with PlugDev"
+    - "Distributing Your Plugin"
+  - "Troubleshooting"

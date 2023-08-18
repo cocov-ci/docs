@@ -1,0 +1,46 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require 'byebug'
+
+def main
+  objs = YAML.load_file('_data/docs_index.yaml')["nav"]
+  make_structure(objs)
+end
+
+def slugify(what)
+  what
+    .unicode_normalize(:nfkc)
+    .gsub(/[^\x00-\x7F]/n, '')
+    .gsub(/[']+/, '')
+    .gsub(/\W+/, ' ')
+    .strip
+    .downcase
+    .gsub(' ', '-')
+end
+
+def make_structure(list, path=['docs'])
+  list.each do |obj|
+    case obj
+    when String
+      file = File.join(path + ["#{slugify(obj)}.markdown"])
+      unless File.exist? file
+        File.write(file, <<~EOF)
+        ---
+        title: "#{obj}"
+        id: "#{slugify(obj)}"
+        layout: documentation
+        ---
+
+        # #{obj}
+        EOF
+      end
+    when Hash
+      t = slugify(obj["title"])
+      FileUtils.mkdir_p File.join(path + [t])
+      make_structure(obj["items"], path + [t])
+    end
+  end
+end
+
+main
